@@ -3,8 +3,10 @@ import todos from "./todos";
 import filter from "./filter";
 import users from './users';
 
-export const todoApp = combineReducers({
+const reducer = combineReducers({
   todos,
   filter,
   users
-});
+})
+
+export default reducer

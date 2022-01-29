@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 
 import TodoList from "../components/TodoList";
-import { completeTodo } from '../redux/actions';
+import { completeTodo } from '../redux/modules/todos';
 
 const TodoListContainer = () => {
   const todos = useSelector((state) => state.todos);

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector  } from 'react-redux'
-import { getUsersPromise, getUsersThunk } from '../redux/actions'
+import { getUsersPromise, getUsersThunk } from '../redux/modules/users'
 import UserList from '../components/UserList'
 
 

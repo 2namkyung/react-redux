@@ -1,5 +1,12 @@
-import { SHOW_DONE, SHOW_ALL } from "../actions";
+// 액션 타입 정의
+const SHOW_DONE = "redux/filter/SHOW_DONE";
+const SHOW_ALL = "redux/filter/SHOW_ALL";
 
+// 액션 생성 함수
+export const showDone = () => ({ type: SHOW_DONE });
+export const showAll = () => ({ type: SHOW_ALL });
+
+// reducer
 export default function filter(previousState, action) {
   // 최초에 초기값 할당
   if (previousState === undefined) {
