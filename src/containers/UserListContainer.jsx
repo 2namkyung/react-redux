@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector  } from 'react-redux'
-import { getUsersPromise, getUsersThunk } from '../redux/modules/users'
+import { getUsersPromise, getUsersSagaStart, getUsersThunk } from '../redux/modules/users'
 import UserList from '../components/UserList'
 
 
@@ -19,5 +19,10 @@ export default function UserListContainer(){
         dispatch(getUsersPromise())
     }, [dispatch])
 
-    return (<UserList users={users} getUsers={getUsers}/>)
+    // redux-saga
+    const getUsers3 = useCallback(()=>{
+        dispatch(getUsersSagaStart())
+    }, [])
+
+    return (<UserList users={users} getUsers={getUsers3}/>)
 }

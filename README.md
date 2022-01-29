@@ -39,11 +39,21 @@ function result(index){
 
 ### redux-thunk
 - Redux Middleware
+- 함수를 dispatch 할 수 있게 해주는 middleware
 - Redux async 처리를 위한 라이브러리
 - action 생성자를 활용하여 비동기 처리
  - 액션 생성자가 액션이 아닌 함수를 리턴한다
 - 액션 생성자가 함수를 리턴할 때만 반응한다
 
 ### redux-promise-middleware
+- Redux Middleware
 - Redux async 처리를 위한 라이브러리
 - actionType_PENDING , actionType_FULFILED , actionType_REJECTED
+
+### redux-saga
+- Redux Middleware
+- 까다로운 비동기 작업 처리 가능
+- Generator 객체를 만들어 내는 생성 함수 이용
+- saga function 등록
+- saga middleware 실행
+- saga 함수를 실행할 액션 dispatch
