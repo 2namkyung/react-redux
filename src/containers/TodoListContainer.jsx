@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { completeTodo } from "../actions";
+
 import TodoList from "../components/TodoList";
+import { completeTodo } from '../redux/actions';
 
 const TodoListContainer = () => {
   const todos = useSelector((state) => state.todos);

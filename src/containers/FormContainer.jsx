@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch } from "react-redux";
-import { addTodo } from "../actions";
+
 import Form from "../components/Form";
+import { addTodo } from '../redux/actions';
 
 const FormContainer = () => {
   const dispatch = useDispatch();

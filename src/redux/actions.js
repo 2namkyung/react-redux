@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const ADD_TODO = "ADD_TODO";
 export const COMPLETE_TODO = "COMPLETE_TODO";
 
@@ -28,16 +30,30 @@ export function getUsersStart() {
   }
 }
 
-export function getUsersSuccess(data){
-  return{
-    type:GET_USERS_SUCCESS,
+export function getUsersSuccess(data) {
+  return {
+    type: GET_USERS_SUCCESS,
     data
   }
 }
 
-export function getUsersFail(error){
-  return{
-    type:GET_USERS_FAIL,
+export function getUsersFail(error) {
+  return {
+    type: GET_USERS_FAIL,
     error,
+  }
+}
+
+// thunk
+export function getUsersThunk() {
+  // 함수를 리턴
+  return async (dispatch) => {
+    try {
+      dispatch(getUsersStart())
+      const response = await axios.get('https://api.github.com/users')
+      dispatch(getUsersSuccess(response.data))
+    } catch (error) {
+      dispatch(getUsersFail(error))
+    }
   }
 }
