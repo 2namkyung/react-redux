@@ -43,3 +43,7 @@ function result(index){
 - action 생성자를 활용하여 비동기 처리
  - 액션 생성자가 액션이 아닌 함수를 리턴한다
 - 액션 생성자가 함수를 리턴할 때만 반응한다
+
+### redux-promise-middleware
+- Redux async 처리를 위한 라이브러리
+- actionType_PENDING , actionType_FULFILED , actionType_REJECTED
