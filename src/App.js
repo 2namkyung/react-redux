@@ -1,17 +1,18 @@
 import React from 'react'
-import FormContainer from "./containers/FormContainer";
-import TodoListContainer from "./containers/TodoListContainer";
-import UserListContainer from './containers/UserListContainer';
+import { Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Todos from './pages/Todos'
+import Users from './pages/Users'
+import history from './history';
+import { ConnectedRouter } from 'connected-react-router';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <UserListContainer/>
-        <TodoListContainer />
-        <FormContainer />
-      </header>
-    </div>
+    <ConnectedRouter history={history}>
+      <Route path="/" component={Home}/>
+      <Route path="/todos" exact component={Todos}/>
+      <Route path="/users" exact component={Users}/>
+    </ConnectedRouter> 
   );
 }
 

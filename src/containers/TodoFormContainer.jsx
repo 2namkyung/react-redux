@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import Form from "../components/Form";
 import { addTodo } from '../redux/modules/todos';
 
-const FormContainer = () => {
+const TodoFormContainer = () => {
   const dispatch = useDispatch();
   function add(todo) {
     dispatch(addTodo(todo));
@@ -12,4 +12,4 @@ const FormContainer = () => {
   return <Form add={add} />;
 };
 
-export default FormContainer;
+export default TodoFormContainer;

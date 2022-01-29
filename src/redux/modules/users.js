@@ -83,13 +83,26 @@ export default function users(prevState = initialState, action){
 
 
 // thunk
+
+function sleep(ms){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve()
+    }, ms)
+  })
+}
 export function getUsersThunk() {
     // 함수를 리턴
-    return async (dispatch) => {
+    return async (dispatch, getState, {history}) => {
       try {
         dispatch(getUsersStart())
+
+        // sleep
+        await sleep(2000)
         const response = await axios.get('https://api.github.com/users')
         dispatch(getUsersSuccess(response.data))
+        history.push('/')
+
       } catch (error) {
         dispatch(getUsersFail(error))
       }
