@@ -1,3 +1,17 @@
+// redux-actions
+import { createActions, handleActions } from "redux-actions";
+
+export const { showAll, showDone } = createActions('SHOW_ALL', 'SHOW_DONE', {prefix:'redux/filter'})
+const initialState = 'ALL'
+
+export const reducer = handleActions({
+  SHOW_ALL:(state, action)=> 'ALL',
+  SHOW_DONE:()=>'DONE'
+}, initialState, {prefix:'redux/filter'})
+
+
+// ------------------------------------------
+
 // 액션 타입 정의
 const SHOW_DONE = "redux/filter/SHOW_DONE";
 const SHOW_ALL = "redux/filter/SHOW_ALL";
