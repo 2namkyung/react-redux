@@ -121,7 +121,7 @@ export const GET_USERS_REJECTED = 'redux/users/GET_USERS_REJECTED'
 export function getUsersPromise() {
   return {
     type: 'GET_USER',
-    paload: async () => {
+    payload: async () => {
       const res = await axios.get('https://api.github.com/users')
       return res.data;
     }

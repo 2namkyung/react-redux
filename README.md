@@ -57,3 +57,6 @@ function result(index){
 - saga function 등록
 - saga middleware 실행
 - saga 함수를 실행할 액션 dispatch
+
+### redux-actions
+- redux action들을 관리할 때 유용한 createAction과 handleActions 함수 제공
